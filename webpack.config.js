@@ -1,7 +1,18 @@
 const path = require('path');
 
 module.exports = {
-    entry: './2/src/index.js',
+    mode: 'development',
+    entry: {
+        main: './2/src/index.js'
+    },
+    module: {
+        rules: [{
+            test: /\.png$/,
+            use: {
+                loader: 'file-loader'
+            }
+        }]
+    },
     output: {
         filename: 'bundle.js',
         path: 'bundle.js',
