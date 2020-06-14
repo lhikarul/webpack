@@ -1,7 +1,7 @@
-import Header from './header'
-import Sidebar from './sidebar'
-import Content from './content'
+import avatar from './js.png'
 
-new Header()
-new Sidebar()
-new Content()
+var img = new Image()
+img.src = avatar
+
+var root = document.getElementById('root')
+root.append(img)
