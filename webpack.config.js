@@ -7,6 +7,13 @@ module.exports = {
     entry: {
         main: './2/src/index.js'
     },
+    devServer: {
+        contentBase: './2/dist',
+        open: true,
+        proxy: {
+            '/api': 'http://localhost:3000'
+        }
+    },
     module: {
         rules: [
             {
@@ -41,7 +48,8 @@ module.exports = {
         template: '2/src/index.html'
     }), new CleanWebpackPlugin()],
     output: {
-        filename: 'test.js',
+        publicPath: '/',
+        filename: 'index.js',
         path: path.resolve(__dirname, '2/dist')
     }
 }
